@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:App1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="768" Width="1360">
+        Title="MainWindow" Height="768" Width="1360" MinWidth="1360" MinHeight="768">
 
     
-        <Frame Name="mainFrame">
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden">
        
         </Frame>
 </Window>

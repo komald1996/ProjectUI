@@ -27,7 +27,12 @@ namespace App1
 
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
+            Dashboard dash = new Dashboard();
+            if (dash != null)
+            {
+                this.NavigationService.Navigate(dash);
 
+            }
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
