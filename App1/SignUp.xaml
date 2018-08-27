@@ -44,12 +44,12 @@
             <TextBox Name="email" Grid.Row="2" Height="40" Width="300" BorderThickness="1"  FontSize="16"/>
 
             <Label Grid.Row="2" Content="Mobile Number" FontSize="13.333" Margin="75,62,0,0" Grid.RowSpan="2" ></Label>
-            <TextBox Name="mobile" Grid.Row="3" Height="40" Width="300" BorderThickness="1"  FontSize="16"/>
+            <TextBox Name="mobile" Grid.Row="3" Height="40" Width="300" BorderThickness="1"  FontSize="16" />
 
             <Label Grid.Row="3"  Content="Password" FontSize="13.333"  Margin="75,63,0,0" Grid.RowSpan="2" />
-            <TextBox Name="password" HorizontalAlignment="Left" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="75,18,0,17"/>
+            <PasswordBox Name="password" HorizontalAlignment="Left" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="75,18,0,17"/>
             <Label Content="Confirm Password" FontSize="13.333"  Grid.Row="3"  Margin="232,63,-13,0" Grid.RowSpan="2" />
-            <TextBox Name="confirm_password" HorizontalAlignment="Right" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="0,18,75,17"/>
+            <PasswordBox Name="confirm_password" HorizontalAlignment="Right" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="0,18,75,17"/>
 
 
             <Button Click="forgot_pass_submit_Click" Content="Submit" Name="forgot_pass_submit" Width="200" Height="50" VerticalAlignment="Center" Grid.Row="5"/>

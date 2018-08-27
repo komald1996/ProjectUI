@@ -16,3 +16,5 @@ C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\ForgotPassword.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\SignUp.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\ForgotPassword.baml
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\SignUp.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Login.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Login.baml

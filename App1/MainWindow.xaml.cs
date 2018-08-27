@@ -27,35 +27,14 @@ namespace App1
         {
             InitializeComponent();
 
-            
+            Login lo = new Login();
+            mainFrame.Navigate(lo);            
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
 
-        private void login_btn_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            ForgotPassword fp = new ForgotPassword();
-            if (fp != null)
-            {
-                this.Content = fp;
-            }
-        }
 
-        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
-        {
-            SignUp su = new SignUp();
-            if (su != null)
-            {
-                this.Content = su;
-            }
-        }
     }
 }
