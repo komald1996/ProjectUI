@@ -33,18 +33,17 @@ namespace App1
 
         private void txtHoldings_Click(object sender, RoutedEventArgs e)
         {
-           
+            NewFrame.Navigate(new System.Uri("Holdings.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void txtbPositions_Click(object sender, RoutedEventArgs e)
         {
-            
+            NewFrame.Navigate(new System.Uri("Positions.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void txtbOrderbook_Click(object sender, RoutedEventArgs e)
         {
-            
-            
+            NewFrame.Navigate(new System.Uri("OrderBook.xaml", UriKind.RelativeOrAbsolute));
         }
 
 
@@ -60,5 +59,9 @@ namespace App1
 
         }
 
+        private void NewFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

@@ -61,11 +61,17 @@
     <Compile Include="Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Holdings.xaml.cs">
+      <DependentUpon>Holdings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderBook.xaml.cs">
       <DependentUpon>OrderBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Positions.xaml.cs">
+      <DependentUpon>Positions.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
@@ -79,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Holdings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OrderBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Positions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

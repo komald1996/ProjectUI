@@ -5,10 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:App1"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="OrderBook">
+      d:DesignHeight="668"
+      Title="OrderBook" Loaded="OrderBook_load" Width="1060">
 
-    <Grid>
-        
-    </Grid>
+    <Border>
+        <StackPanel>
+            <Grid Margin="0,0,0,0">
+                <DataGrid RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="650" HorizontalAlignment="Center" Name="dtgridOrderBook" VerticalAlignment="Top" BorderBrush="{x:Null}" Margin="0,-10,0,0">
+                    <DataGrid.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                    </DataGrid.Background>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+    </Border>
 </Page>

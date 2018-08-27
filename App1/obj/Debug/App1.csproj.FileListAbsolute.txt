@@ -24,3 +24,7 @@ C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Dashboard.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Dashboard.baml
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Form.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Form.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Holdings.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Positions.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Holdings.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Positions.baml
