@@ -13,7 +13,7 @@
             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
         </Grid.Background>
 
-        <Grid  Height="450" Width="400" SnapsToDevicePixels="True" Background="White">
+        <Grid  Height="400" Width="400" SnapsToDevicePixels="True" Background="White" Margin="485,159,475,159">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
             </Grid.Effect>
@@ -25,12 +25,14 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" HorizontalAlignment="Center" Content="OMS" FontFamily="Segoe UI Semibold" FontSize="29.333" Height="65" Margin="163,0,162,65" VerticalAlignment="Bottom"></Label>
-            <Label Grid.Row="0" Content="Username" Margin="50,70,0,0" FontSize="13.333"></Label>
-            <TextBox  Grid.Row="0" Height="50" Width="300"  VerticalAlignment="Bottom" BorderThickness="1"   FontSize="16"/>
-            <Label Grid.Row="1" Content="Password" Margin="50,20,50,30" FontSize="13.333"></Label>
-            <TextBox Grid.Row="1" Height="50" Width="300"  VerticalAlignment="Center" BorderThickness="1"  FontSize="16"/>
-
+            <Label Grid.Row="0"  Content="User Name" Margin="50,61,0,0" FontSize="13.333"></Label>
+            <TextBox  Grid.Row="0" Name="username" Height="50" Width="300"  VerticalAlignment="Bottom" BorderThickness="1"   FontSize="16"/>
+            <Label Grid.Row="1"  Content="Password" Margin="50,20,50,30" FontSize="13.333"></Label>
+            <PasswordBox Grid.Row="1" Name="password"  Height="50" Width="300"  VerticalAlignment="Center" BorderThickness="1"  FontSize="16"/>
+            <Label Name="lblblank" Visibility="Hidden" Content="Username/Password cannot be left blank" FontFamily="Cambria" FontSize="16" Grid.Row="1" Foreground="Red" Margin="10,105,-10,45" Grid.RowSpan="2" />
+            <Label Name="lblerror" Visibility="Hidden" Content="Username/Password combination incorrect" FontFamily="Cambria" FontSize="16" Grid.Row="1" Foreground="Red" Margin="10,105,-10,45" Grid.RowSpan="2" />
             <Button Content="Login" Name="login_btn" Width="200" Height="50" VerticalAlignment="Top" Grid.Row="2" Click="login_btn_Click"/>
+
 
             <TextBlock Grid.Row="2"  Margin="142,60,-2,0" FontSize="13.333">
                 <Hyperlink NavigateUri ="ForgotPassword.xaml" Click="Hyperlink_Click">Forgot Password?</Hyperlink>

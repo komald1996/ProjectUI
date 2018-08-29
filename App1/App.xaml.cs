@@ -13,5 +13,8 @@ namespace App1
     /// </summary>
     public partial class App : Application
     {
+
+        public static long userId = 111000;
+
     }
 }

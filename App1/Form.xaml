@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:App1"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="800"
+      d:DesignHeight="400" d:DesignWidth="800"
       Title="Form">
 
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="b2v" />
     </Page.Resources>
-   
 
-    <Grid Width="800" Height="300" MinHeight="200" MinWidth="600" Background="White" Margin="-100,-200,0,0">
-        
+
+    <Grid Width="800" Height="400" MinHeight="200" MinWidth="600" Background="White" Margin="-100,-200,0,0">
+
 
         <Grid.Effect>
             <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
@@ -27,8 +27,8 @@
         <Grid.BindingGroup>
             <BindingGroup/>
         </Grid.BindingGroup>
-        <Border Grid.ColumnSpan="2">
-            <StackPanel>
+        <Border Grid.ColumnSpan="2" Margin="0,22,0,-24">
+            <StackPanel Margin="10,34,-10,-34">
                 <TextBlock Name="txtbOrderForm" Text="Place an Order" HorizontalAlignment="Center" FontFamily="Cambria" FontSize="20" FontWeight="ExtraBold"/>
                 <Grid Margin="0,10">
                     <Grid.ColumnDefinitions>
@@ -48,12 +48,16 @@
                 <Grid Margin="0,10,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Name="txtbStockName" Content="Stock Name" FontFamily="Cambria" FontSize="16" FontWeight="Bold" Grid.Column="0"/>
-                    <ComboBox Name="cbStockName" Grid.Column="1" Padding="2" Width="200" HorizontalAlignment="Left">
-                        <ComboBoxItem Content="Facebook" FontFamily="Cambria"/>
+                    <ComboBox Name="cbStockName" Padding="2" Width="167" HorizontalAlignment="Left" SelectionChanged="cbStockName_selectionchanged" Grid.ColumnSpan="2" Grid.Column="1" Margin="10,0,0,0">
+                        <ComboBoxItem Content="Facebook" FontFamily="Cambria" FontSize="18" />
                     </ComboBox>
+                    <Label Name="lblLtp" Content="LTP" FontFamily="Cambria" HorizontalAlignment="Right" FontSize="18" Grid.Column="3" Margin="0,0,161,0" />
+                    <Button Name="btnRefresh"  Content="Refresh" FontFamily="Cambria" FontSize="16" Grid.Column="3" Width="100" Click="btnRefresh_Click"/>
                 </Grid>
                 <Grid Margin="0,10,0,0">
                     <Grid.ColumnDefinitions>
@@ -63,6 +67,7 @@
                     <Label Name="txtbOrderTypes" Content="Select your order type" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Cambria" FontSize="16" FontWeight="Bold" Grid.Column="0"/>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
+                            <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
@@ -79,9 +84,16 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <RadioButton Visibility="{Binding IsChecked,ElementName=rbLimit,Converter={StaticResource b2v}}" Name="rbMinimumFill" Content="Minimum Fill" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="Cambria" FontSize="16"/>
                             <RadioButton Visibility="{Binding IsChecked,ElementName=rbLimit,Converter={StaticResource b2v}}" Name="rbAllorNone" Content="All or None" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="16"/>
+                            <RadioButton Visibility="{Binding IsChecked,ElementName=rbLimit,Converter={StaticResource b2v}}" Name="rbPartial" Content="Partial" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" FontFamily="Cambria" FontSize="16"/>
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <TextBox Name="txtbMinimumFill" Visibility="{Binding IsChecked,ElementName=rbMinimumFill,Converter={StaticResource b2v}}" Height="30" Width="100" FontFamily="Cambria" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <TextBox Name="txtbPartial" Visibility="{Binding IsChecked,ElementName=rbPartial,Converter={StaticResource b2v}}" Height="30" Width="100" FontFamily="Cambria" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         </Grid>
 
                     </Grid>
@@ -90,9 +102,11 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="300"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Name="lblQuantity" Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="Cambria" FontSize="16" FontWeight="Bold" />
-                    <TextBox Name="txtbQuantity" Text="Enter stock quantity" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="16" Width="200"/>
+                    <TextBox Name="txtbQuantity" Text="" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="16" Margin="0,0,50,4" HorizontalAlignment="Right" Width="200" TextChanged="txtbQuantity_textchanged"/>
+                    <Label Name="lblerror" Visibility="Hidden" Content="Stock quantity cannot be negative/fraction" FontFamily="Cambria" FontSize="10" Grid.Column="2" Foreground="Red"/>
                 </Grid>
                 <Grid Margin="0,15,0,0">
                     <Grid.ColumnDefinitions>
@@ -100,10 +114,10 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Name="lblPrice" Content="Price" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" FontFamily="Cambria" FontSize="16" FontWeight="Bold" />
-                    <TextBox Name="txtbPrice" Text="Enter stock price" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="16" Width="200"/>
+                    <TextBox Name="txtbPrice" Text="" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" FontFamily="Cambria" FontSize="16" Width="200" />
                 </Grid>
                 <Grid Margin="0,20,0,0">
-                    <Button Name="btnCreateOrder" Content="Create Order" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cambria" FontSize="18" FontWeight="ExtraBold"/>
+                    <Button Name="btnCreateOrder" Content="Create Order" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Cambria" FontSize="18" FontWeight="ExtraBold" Margin="344,0" Click="btnCreateOrder_Click"/>
                 </Grid>
             </StackPanel>
         </Border>

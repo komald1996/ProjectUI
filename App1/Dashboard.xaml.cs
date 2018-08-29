@@ -24,6 +24,31 @@ namespace App1
         public Dashboard()
         {
             InitializeComponent();
+
+            uId.Content = App.userId;
+
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = "Data Source=GRAD27-HP; User ID=sa; Password=sa123; INITIAL CATALOG=project_db";
+                connection.Open();
+                string sql = $"SELECT firstname, lastname  FROM USER_INFO WHERE user_id = {uId.Content.ToString()}"; //CREATE A SQL COMMAND OBJECT
+                SqlCommand myCommand = new SqlCommand(sql, connection);
+                using (SqlDataReader myDataReader = myCommand.ExecuteReader())
+                {
+                    while (myDataReader.Read())
+                    {
+                        fname.Content = myDataReader["firstname"].ToString();
+                        lname.Content = myDataReader["lastname"].ToString();
+
+                    }
+                }
+
+
+            }
+
+            
+            
+
         }
 
         private void txtbOrder_Click(object sender, RoutedEventArgs e)
@@ -56,7 +81,7 @@ namespace App1
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-
+            NewFrame.Navigate(new System.Uri("Profile.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void NewFrame_Navigated(object sender, NavigationEventArgs e)

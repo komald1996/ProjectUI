@@ -8,9 +8,49 @@
       d:DesignHeight="668" d:DesignWidth="1060"
       Title="Positions" Loaded="positions_load">
     <Border>
-        <StackPanel>
+        <StackPanel Orientation="Vertical">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Content="Ref" Click="Button_Click" Height="40" Width="40" HorizontalAlignment="Left" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Stroke="Black" StrokeThickness="1">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="C:\Users\Grad67\Desktop\Komal\Project\refresh.png" Stretch="Fill"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock Text="Cancel Orders" Grid.Column="1" FontSize="26.667"></TextBlock>
+                <ComboBox Name="orderIds" Grid.Column="1" Margin="189,0,161,0">
+                    
+                </ComboBox>
+                <Button Grid.Column="1" Click="cancel_Click" Name="cancel" Content="Submit" Margin="387,0,0,0" HorizontalAlignment="Left" Width="127" ></Button>
+
+            </Grid>
+
             <Grid Margin="0,0,0,0">
-                <DataGrid RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="200" HorizontalAlignment="Center" Name="dtgridPositions" VerticalAlignment="Top" Width="400"/>
+                <DataGrid BorderThickness="1" BorderBrush="Black" Width="1030" FontStretch="Condensed" RowHeight="30" ColumnWidth="113" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="200" HorizontalAlignment="Center" Name="dtgridPositions" VerticalAlignment="Top" Margin="0,45" SelectionChanged="dtgridPositions_SelectionChanged">
+                    <DataGrid.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                    </DataGrid.Background>
+
+                    <DataGrid.Effect>
+                        <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
+                    </DataGrid.Effect>
+
+                </DataGrid>
             </Grid>
         </StackPanel>
     </Border>

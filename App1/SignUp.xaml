@@ -8,25 +8,25 @@
       d:DesignHeight="768" d:DesignWidth="1360" 
       Title="SignUp">
 
-    <Grid>
+    <Grid Margin="-2,0,2,0">
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
         </Grid.Background>
 
-        <Grid  Height="450" Width="450" Background="White" SnapsToDevicePixels="True">
+        <Grid  Height="500" Width="450" Background="White" SnapsToDevicePixels="True">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
             </Grid.Effect>
 
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
-                <RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
 
-                </RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
 
@@ -35,25 +35,43 @@
 
             <Label Grid.Row="0" Content="Open your account now," Margin="66,0,66,30" FontSize="26.667" VerticalAlignment="Bottom" Grid.ColumnSpan="2"></Label>
 
-            <Label Content="First Name" FontSize="13.333" Margin="75,66,232,55" Grid.RowSpan="2" />
-            <TextBox Name="first_name" HorizontalAlignment="Left" Grid.Row="1" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="75,17,0,18"/>
-            <Label Content="Last Name" FontSize="13.333" Margin="250,66,0,0" Grid.RowSpan="2" />
-            <TextBox Name="last_name" HorizontalAlignment="Right" Grid.Row="1" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="0,17,75,18"/>
+            <Label Content="First Name" FontSize="13.333" Margin="77,60,230,55" Grid.RowSpan="2" />
+            <TextBox Name="first_name" HorizontalAlignment="Left" Grid.Row="1" Height="34" Width="143" BorderThickness="1"  FontSize="16" Margin="75,17,0,18" TextChanged="first_name_TextChanged"/>
+            <Label Content="Last Name" FontSize="13.333" Margin="236,60,14,0" Grid.RowSpan="2" />
+            <TextBox Name="last_name" HorizontalAlignment="Right" Grid.Row="1" Height="34" Width="143" BorderThickness="1"  FontSize="16" Margin="0,17,75,21"/>
 
-            <Label SnapsToDevicePixels="True" Grid.Row="1" Content="Email Id" FontSize="13.333" Margin="75,0,0,0" Height="87" VerticalAlignment="Bottom" Grid.RowSpan="2" />
-            <TextBox Name="email" Grid.Row="2" Height="40" Width="300" BorderThickness="1"  FontSize="16"/>
+            <Label  Grid.Row="1" Content="Email Id" FontSize="13.333" Margin="75,0,0,0" Height="87" VerticalAlignment="Bottom" Grid.RowSpan="2" />
+            <TextBox Name="email" Grid.Row="2" Width="300" BorderThickness="1" Height="34"  FontSize="16" Margin="75,16"/>
 
-            <Label Grid.Row="2" Content="Mobile Number" FontSize="13.333" Margin="75,62,0,0" Grid.RowSpan="2" ></Label>
-            <TextBox Name="mobile" Grid.Row="3" Height="40" Width="300" BorderThickness="1"  FontSize="16" />
+            <Label Grid.Row="2" Content="Mobile Number" FontSize="13.333" Margin="75,60,0,0" Grid.RowSpan="2" ></Label>
+            <TextBox Name="mobile" Grid.Row="3" Width="300" BorderThickness="1" Height="34"  FontSize="16" Margin="75,15,75,16" />
 
-            <Label Grid.Row="3"  Content="Password" FontSize="13.333"  Margin="75,63,0,0" Grid.RowSpan="2" />
-            <PasswordBox Name="password" HorizontalAlignment="Left" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="75,18,0,17"/>
+            <Label Grid.Row="3"  Content="Password" FontSize="13.333"  Margin="75,60,0,0" Grid.RowSpan="2" />
+            <PasswordBox Name="password" HorizontalAlignment="Left" Grid.Row="4" Height="34" Width="143" BorderThickness="1"  FontSize="16" Margin="75,18,0,17"/>
             <Label Content="Confirm Password" FontSize="13.333"  Grid.Row="3"  Margin="232,63,-13,0" Grid.RowSpan="2" />
-            <PasswordBox Name="confirm_password" HorizontalAlignment="Right" Grid.Row="4" Height="40" Width="143" BorderThickness="1"  FontSize="16" Margin="0,18,75,17"/>
+            <PasswordBox Name="confirm_password" HorizontalAlignment="Right" Grid.Row="4" Height="34" Width="143" BorderThickness="1"  FontSize="16" Margin="0,18,75,17"/>
 
+            <Label Content="Security Question" FontSize="13.333"  Grid.Row="4"  Margin="78,60,141,0" Grid.RowSpan="2" />
+            <ComboBox  Name="security_question" Grid.Row="5" Padding="2" Width="185" HorizontalAlignment="Left" Margin="77,17,0,16" Height="34">
+                <ComboBoxItem Content="Which sport do you like" FontFamily="Cambria"/>
+                <ComboBoxItem Content="What is your school name" FontFamily="Cambria"/>
+                <ComboBoxItem Content="What was your birthday gift" FontFamily="Cambria"/>
+            </ComboBox>
+            <TextBox Name="security_answer" Grid.Row="5" Height="34" BorderThickness="1" Width="100"  FontSize="16" Margin="260,16,75,16" />
 
-            <Button Click="forgot_pass_submit_Click" Content="Submit" Name="forgot_pass_submit" Width="200" Height="50" VerticalAlignment="Center" Grid.Row="5"/>
+            <Button Click="forgot_pass_submit_Click" Content="Submit" Name="forgot_pass_submit" Width="200" Height="40" VerticalAlignment="Top" Grid.Row="6"/>
+
+            <TextBlock Grid.Row="6" HorizontalAlignment="Center" FontSize="10" VerticalAlignment="Bottom">
+               <Hyperlink NavigateUri ="Login.xaml" Click="Hyperlink_Click_2">Go back to Login</Hyperlink>
+            </TextBlock>
 
         </Grid>
+
+        <Grid Width="200" Height="200" HorizontalAlignment="Right" Margin="0,142,142,426" Background="#FFFBFBFB">
+            <TextBlock Margin="20,24,23,130" Text="User Id is," FontSize="26.667"/>
+            <TextBlock x:Name="result1" Margin="18,74,24,82" FontSize="26.667"/>
+            <Button Click="resultButton_Click" x:Name="resultButton" Content="Continue to Login" HorizontalAlignment="Left" Margin="38,138,0,0" VerticalAlignment="Top" Width="108" Height="34"/>
+        </Grid>
+
     </Grid>
 </Page>

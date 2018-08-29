@@ -28,3 +28,13 @@ C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Holdings.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Positions.g.cs
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Holdings.baml
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Positions.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Profile.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\Profile.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminDashboard.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminOrderBook.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminDashboard.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminOrderBook.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminOptions.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminTradeBook.g.cs
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminOptions.baml
+C:\Users\Grad67\Desktop\Komal\Project\App1\App1\obj\Debug\AdminTradeBook.baml

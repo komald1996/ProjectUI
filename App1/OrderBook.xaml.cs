@@ -55,7 +55,7 @@ namespace App1
 
         }
 
-        private void btn_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             using (SqlConnection connection = new SqlConnection())
             {
@@ -93,5 +93,7 @@ namespace App1
                 }
             }
         }
+
+       
     }
 }

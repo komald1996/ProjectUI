@@ -8,9 +8,36 @@
       d:DesignHeight="668" d:DesignWidth="1060"
       Title="Holdings" Loaded="table_load">
 
-    <Grid Margin="0,0,0,0">
-        <DataGrid RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="200" HorizontalAlignment="Center" Name="dtgridHoldings" VerticalAlignment="Top" Width="400"/>
+    <StackPanel Orientation="Vertical">
+        <Button Content="Ref" Click="Button_Click" Height="40" Width="40" HorizontalAlignment="Left" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="Black" StrokeThickness="1">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="C:\Users\Grad67\Desktop\Komal\Project\refresh.png" Stretch="Fill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid Margin="0,0,0,0">
+        <DataGrid BorderThickness="1" BorderBrush="Black" RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="200" HorizontalAlignment="Center" Name="dtgridHoldings" VerticalAlignment="Top" Margin="10,45,10,10">
+            <DataGrid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </DataGrid.Background>
+
+            <DataGrid.Effect>
+                <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
+            </DataGrid.Effect>
+
+        </DataGrid>
         <!--<Button Name="btn" Content="button" Height="50" Width="200" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btn_Click"/>-->
     </Grid>
+
+    </StackPanel>
 
 </Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Grad67\Desktop\Komal\Project\App1\App1\App.xaml
-9-1928457861
+14-92856504
 
-131509504685
+18-304426886
 13738642453
-Dashboard.xaml;ForgotPassword.xaml;Form.xaml;Holdings.xaml;Login.xaml;MainWindow.xaml;OrderBook.xaml;Positions.xaml;SignUp.xaml;
+AdminDashboard.xaml;AdminOptions.xaml;AdminOrderBook.xaml;AdminTradeBook.xaml;Dashboard.xaml;ForgotPassword.xaml;Form.xaml;Holdings.xaml;Login.xaml;MainWindow.xaml;OrderBook.xaml;Positions.xaml;Profile.xaml;SignUp.xaml;
 
 False
 

@@ -9,14 +9,39 @@
       Title="OrderBook" Loaded="OrderBook_load" Width="1060">
 
     <Border>
-        <StackPanel>
-            <Grid Margin="0,0,0,0">
-                <DataGrid RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="650" HorizontalAlignment="Center" Name="dtgridOrderBook" VerticalAlignment="Top" BorderBrush="{x:Null}" Margin="0,-10,0,0">
+        <StackPanel Orientation="Vertical">
+
+
+            <Button Content="Ref" Click="Button_Click" Height="40" Width="40" HorizontalAlignment="Left" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Stroke="Black" StrokeThickness="1">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="C:\Users\Grad67\Desktop\Komal\Project\refresh.png" Stretch="Fill"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Grid Margin="0,0,0,0" Height="300">
+                <DataGrid BorderThickness="1" BorderBrush="Black" RowHeight="30" ColumnWidth="120" Focusable="False"  FontSize="15" AutoGenerateColumns="True" Height="200" HorizontalAlignment="Center" x:Name="dtgridOrderBook"   VerticalAlignment="Top" Margin="0,45">
                     <DataGrid.Background>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
                     </DataGrid.Background>
+
+                    <DataGrid.Effect>
+                        <DropShadowEffect BlurRadius="9" Color="#FFB99D9D"/>
+                    </DataGrid.Effect>
+
                 </DataGrid>
             </Grid>
+
+
         </StackPanel>
     </Border>
 </Page>

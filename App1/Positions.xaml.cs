@@ -26,6 +26,25 @@ namespace App1
         public Positions()
         {
             InitializeComponent();
+
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = "Data Source=GRAD27-HP; User ID=sa; Password=sa123; INITIAL CATALOG=project_db";
+                connection.Open();
+                string sql = $"SELECT ORDER_ID FROM ORDER_TABLE WHERE USER_ID={App.userId} AND order_status between -2 and 0"; //CREATE A SQL COMMAND OBJECT
+                SqlCommand myCommand = new SqlCommand(sql, connection);
+                using (SqlDataReader myDataReader = myCommand.ExecuteReader())
+                {
+                    while (myDataReader.Read())
+                    {
+                        orderIds.Items.Add(myDataReader["order_id"]);
+                    }
+                }
+            }
+
+
+                
+
         }
         DataTable dt;
         DataRow dr;
@@ -33,15 +52,16 @@ namespace App1
         private void positions_load(object sender, RoutedEventArgs e)
         {
             dt = new DataTable("Positions");
-            DataColumn OrderTime = new DataColumn("Time of Order", typeof(DateTime));
+            DataColumn OrderTime = new DataColumn("Order Time", typeof(DateTime));
             DataColumn OrderId = new DataColumn("Order ID", typeof(long));
-            DataColumn OrderType = new DataColumn("Type of Order", typeof(String));
+            DataColumn OrderType = new DataColumn("Order Type", typeof(String));
             DataColumn StockName = new DataColumn("Stock Name", typeof(String));
             DataColumn Quantity = new DataColumn("Quantity", typeof(int));
             DataColumn Price = new DataColumn("Trade Price", typeof(double));
-            DataColumn OrderStatus = new DataColumn("Status of Order", typeof(String));
+            DataColumn OrderStatus = new DataColumn("Order Status", typeof(String));
             DataColumn TransacId = new DataColumn("Transaction ID", typeof(long));
-            DataColumn PercentOrder = new DataColumn("Percentage of Order Executed", typeof(double));
+            DataColumn PercentOrder = new DataColumn("% of Order Executed", typeof(double));
+            
             dt.Columns.Add(OrderTime);
             dt.Columns.Add(OrderId);
             dt.Columns.Add(OrderType);
@@ -56,7 +76,7 @@ namespace App1
         }
         int qty = 0;
         int qty1 = 0;
-        private void btn_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             using (SqlConnection connection = new SqlConnection())
             {
@@ -95,7 +115,20 @@ namespace App1
                         dtgridPositions.ItemsSource = dt.DefaultView;
                     }
                 }
+
+               
+
             }
+        }
+
+        private void dtgridPositions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
